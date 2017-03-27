@@ -23,11 +23,11 @@ struct WordsResponseData {
 
 class WordGetter: NSObject {
     
-    let URLString = "http://linkedin-reach.hagbpyjegb.us-west-2.elasticbeanstalk.com/words?difficulty"
+    let URLString = "http://linkedin-reach.hagbpyjegb.us-west-2.elasticbeanstalk.com/words"
     
-    func getWords(difficultyLevel: Int, completion: @escaping WordCompletion) {
+    func getWords(completion: @escaping WordCompletion) {
         
-        guard let url = URL(string: "\(URLString)=\(difficultyLevel)") else {return}
+        guard let url = URL(string: "\(URLString)") else {return}
         
         Alamofire.request(url).responseString { (response) in
             
